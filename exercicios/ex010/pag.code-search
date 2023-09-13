@@ -1,0 +1,23 @@
+# Query: pag
+# ContextLines: 1
+
+15 resultados - Um arquivo
+
+index.html:
+   1: <!DOCTYPE html>
+   2: <html lang="pt-br">
+   3  
+
+   5      <meta charset="UTF-8">
+   6:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   7      <title>trabalhando com links</title>
+
+  11      <h1>usando liks externos</h1>
+  12:     <p>voçê pode acessar meu <a href="https://gustavoguanabara.github.io/" target="_blank" rel="external">repositorio
+  13:             publico no github</a>
+  14:     <p>
+  15:     <p>voçê tambem pode acessar no <a href="https://www.youtube.com/@CursoemVideo" target="_blank"
+  16:             rel="external">youtube</a></p>
+  17              <h2>usando links internos</h2>
+  18:             <p></p>
+  19  </body>
