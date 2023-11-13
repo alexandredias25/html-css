@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vida</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<title>Pedido de Namoro</title>
+<style>
+    body {
+        background-color: rgb(241, 139, 224);
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: rgb(101, 5, 255);
+        font-size: 60px;
+    }
+
+    p {
+        color: rgb(255, 0, 0);
+        font-size: 70px;
+    }
+
+    .option {
+        display: inline-block;
+        margin: 50px;
+    }
+
+    .selected-sim {
+        background-color: green;
+    }
+
+    .selected-nao {
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+<h1>Pedido para minha princesa</h1>
+<p> quer namorar comigo?</p>
+<div class="option">
+    <button id="sim" onclick="selecionarOpcao('sim')">Sim!</button>
+</div>
+<div class="option">
+    <button id="nao" onclick="selecionarOpcao('nao')">Não.</button>
+</div>
+<script>
+    var naoClicado = true;
+ 
+    function selecionarOpcao(opcao) {
+        var simButton = document.getElementById('sim');
+        var naoButton = document.getElementById('nao');
+
+        if (opcao === 'sim') {
+            simButton.classList.add('selected-sim');
+            naoButton.classList.remove('selected-nao');
+        } else if (opcao === 'nao') {
+            naoButton.classList.add('selected-nao');
+            naoClicado = false;
+            simButton.classList.remove('selected-sim');
+
+            // Randomly position the "Não" button
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+            var buttonWidth = naoButton.offsetWidth;
+            var buttonHeight = naoButton.offsetHeight;
+
+            var randomX = Math.floor(Math.random() * (windowWidth - buttonWidth));
+            var randomY = Math.floor(Math.random() * (windowHeight - buttonHeight));
+
+            naoButton.style.position = "absolute";
+            naoButton.style.left = randomX + "px";
+            naoButton.style.top = randomY + "px";
+        }
+    }
+</script>
+</body>
+</html>

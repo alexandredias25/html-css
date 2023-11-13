@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pedido de Namoro</title>
+<style>
+    body {
+        background-color: rgb(241, 139, 224);
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+css
+Copy code
+h1 {
+    color: rgb(101, 5, 255);
+    font-size: 60px;
+}
+
+p {
+    color: rgb(255, 0, 0);
+    font-size: 70px;
+}
+
+.option {
+    display: inline-block;
+    margin: 50px;
+}
+
+.selected-sim {
+    background-color: green;
+}
+
+.selected-nao {
+    background-color: red;
+}
+
+.heart {
+    position: absolute;
+    pointer-events: none;
+}
+</style>
+</head>
+<body>
+<h1>Pedido para minha princesa</h1>
+<p> quer namorar comigo?</p>
+<div class="option">
+    <button id="sim" onclick="selecionarOpcao('sim')">Sim!</button>
+</div>
+<div class="option">
+    <button id="nao" onclick="selecionarOpcao('nao')">Não.</button>
+</div>
+<script>
+    var naoClicado = true;
+function selecionarOpcao(opcao) {
+    var simButton = document.getElementById('sim');
+    var naoButton = document.getElementById('nao');
+
+    if (opcao === 'sim') {
+        simButton.classList.add('selected-sim');
+        naoButton.classList.remove('selected-nao');
+    } else if (opcao === 'nao') {
+        naoButton.classList.add('selected-nao');
+        naoClicado = false;
+        simButton.classList.remove('selected-sim');
+    }
+
+    // Add hearts to the body
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    for (var i = 0; i < 30; i++) {
+        var heart = document.createElement('img');
+        heart.src = "idosaM.png" // Replace 'heart.png' with the path to your heart image
+        heart.className = 'heart';
+
+        var randomX = Math.floor(Math.random() * windowWidth);
+        var randomY = Math.floor(Math.random() * windowHeight);
+
+        heart.style.left = randomX + 'px';
+        heart.style.top = randomY + 'px';
+
+        document.body.appendChild(heart);
+    }
+}
+</script>
+</body>
+</html>
